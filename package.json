@@ -15,11 +15,11 @@
   "license": "MIT",
   "dependencies": {
     "nuxt-edge": "2.0.0-25523369.7c85202"
-  },  
+  },
   "config": {
     "nuxt": {
       "host": "0.0.0.0",
-      "port": "4000"
+      "port": "4100"
     }
   }
 }

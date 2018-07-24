@@ -2,7 +2,7 @@
   <nav>
     <div class="container">
       <h1>
-        <nuxt-link to="/">Nuxt + Meteor</nuxt-link>
+        <nuxt-link to="/">meionorte.com</nuxt-link>
       </h1>
       <ul>
         <li>

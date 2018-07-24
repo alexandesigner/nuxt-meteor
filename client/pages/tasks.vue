@@ -13,6 +13,15 @@
   import { Tracker } from 'meteor/tracker'
   import { Tasks } from 'server/lib/collections/tasks'
   export default {
+    beforeRouteEnter (to, from, next) {
+      if (!Meteor.userId()) {
+        next({
+          name: 'index'
+        })
+      } else {
+        next()
+      }
+    },
     data () {
       return {
         tasks: []

@@ -18,6 +18,7 @@ module.exports = {
     ]
   },
   loading: {color: 'yellow', height: '3px'},
+  modules: ['~/modules/routes'],
   build: {
     extend (config) {
       config.resolve.alias = {
