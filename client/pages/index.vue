@@ -49,8 +49,8 @@
       }
     },
     created () {
-      this.userEmail()
       Tracker.autorun(() => {
+        this.userEmail()
         this.loginStatus()
       })
     },
