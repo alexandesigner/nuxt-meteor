@@ -17,8 +17,16 @@ module.exports = {
       { name: 'mobile-web-app-capable', content: 'yes' }
     ]
   },
-  loading: {color: 'yellow', height: '3px'},
-  modules: ['~/modules/routes'],
+  modules: [
+    '@nuxtjs/router'
+  ],
+  generate: {
+    routes: [
+      '/',
+      '/tasks',
+      '/about'
+    ]
+  },
   build: {
     extend (config) {
       config.resolve.alias = {
@@ -31,12 +39,15 @@ module.exports = {
         'static': resolve(__dirname, './client/static')
       }
       config.externals = function (context, request, callback) {
-        var match = request.match(/^meteor\/(.+)$/);
-        var pack = match && match[1];
-        var locator = pack && 'Package["' + pack + '"]';
-
-        return locator ? callback(null, locator) : callback();
+        var match = request.match(/^meteor\/(.+)$/)
+        var pack = match && match[1]
+        var locator = pack && 'Package["' + pack + '"]'
+        return locator ? callback(null, locator) : callback()
       }
     }
+  },
+  loading: {
+    color: 'yellow',
+    height: '3px'
   }
 };
